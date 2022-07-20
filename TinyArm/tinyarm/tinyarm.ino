@@ -56,45 +56,74 @@ void loop() {
   
   posicaoSeguranca();
   teclaUm();
+  teclaDois();
   teclaTres();
   teclaQuatro();
+  teclaCinco();
+  teclaSeis();
+  teclaSete();
+  teclaOito();
+  teclaNove();
+  teclaZero();
+  teclaCorrige();
+  teclaConfirma();
+  
   
 }
 
 void teclaUm(){
 
   jointBase.write(100);
-  jointRight.write(168);
-  jointLeft.write(141);
+  jointRight.write(127);
+  jointLeft.write(140);
   delay(intervalo);
 
   jointBase.write(100);
-  jointRight.write(168);
-  jointLeft.write(124);
+  jointRight.write(127);
+  jointLeft.write(117);
   delay(intervalo);
 
   jointBase.write(100);
-  jointRight.write(168);
-  jointLeft.write(141);
+  jointRight.write(127);
+  jointLeft.write(140);
+  delay(intervalo);
+
+}
+
+void teclaDois(){
+
+  jointBase.write(89);
+  jointRight.write(127);
+  jointLeft.write(140);
+  delay(intervalo);
+
+  jointBase.write(89);
+  jointRight.write(127);
+  jointLeft.write(117);
+  delay(intervalo);
+
+  jointBase.write(89);
+  jointRight.write(127);
+  jointLeft.write(140);
   delay(intervalo);
 
 }
 
 void teclaTres(){
 
-  jointBase.write(86);
-  jointRight.write(170);
-  jointLeft.write(143);
+  jointBase.write(79);
+  jointRight.write(127);
+  jointLeft.write(140);
   delay(intervalo);
 
-  jointBase.write(86);
-  jointRight.write(170);
-  jointLeft.write(130);
+  jointBase.write(79);
+  jointRight.write(127);
+  jointLeft.write(117);
   delay(intervalo);
 
-  jointBase.write(86);
-  jointRight.write(170);
-  jointLeft.write(143);
+  jointBase.write(79);
+  jointRight.write(127);
+  jointLeft.write(140);
   delay(intervalo);
 
 }
@@ -102,35 +131,186 @@ void teclaTres(){
 void teclaQuatro(){
 
   jointBase.write(103);
-  jointRight.write(155);
-  jointLeft.write(131);
+  jointRight.write(115);
+  jointLeft.write(128);
   delay(intervalo);
 
   jointBase.write(103);
-  jointRight.write(155);
-  jointLeft.write(111);
+  jointRight.write(115);
+  jointLeft.write(108);
   delay(intervalo);
 
   jointBase.write(103);
-  jointRight.write(155);
-  jointLeft.write(131);
+  jointRight.write(115);
+  jointLeft.write(128);
   delay(intervalo);
 
 }
 
+void teclaCinco(){
+
+  jointBase.write(89);
+  jointRight.write(115);
+  jointLeft.write(128);
+  delay(intervalo);
+
+  jointBase.write(89);
+  jointRight.write(115);
+  jointLeft.write(108);
+  delay(intervalo);
+
+  jointBase.write(89);
+  jointRight.write(115);
+  jointLeft.write(128);
+  delay(intervalo);
+
+}
+
+void teclaSeis(){
+
+  jointBase.write(75);
+  jointRight.write(115);
+  jointLeft.write(128);
+  delay(intervalo);
+
+  jointBase.write(75);
+  jointRight.write(115);
+  jointLeft.write(108);
+  delay(intervalo);
+
+  jointBase.write(75);
+  jointRight.write(115);
+  jointLeft.write(128);
+  delay(intervalo);
+
+}
+
+void teclaSete(){
+
+  jointBase.write(105);
+  jointRight.write(104);
+  jointLeft.write(119);
+  delay(intervalo);
+
+  jointBase.write(105);
+  jointRight.write(104);
+  jointLeft.write(98);
+  delay(intervalo);
+
+  jointBase.write(105);
+  jointRight.write(104);
+  jointLeft.write(119);
+  delay(intervalo);
+
+}
+
+void teclaOito(){
+
+  jointBase.write(90);
+  jointRight.write(104);
+  jointLeft.write(119);
+  delay(intervalo);
+
+  jointBase.write(90);
+  jointRight.write(104);
+  jointLeft.write(98);
+  delay(intervalo);
+
+  jointBase.write(90);
+  jointRight.write(104);
+  jointLeft.write(119);
+  delay(intervalo);
+
+}
+
+void teclaNove(){
+
+  jointBase.write(74);
+  jointRight.write(104);
+  jointLeft.write(119);
+  delay(intervalo);
+
+  jointBase.write(74);
+  jointRight.write(104);
+  jointLeft.write(98);
+  delay(intervalo);
+
+  jointBase.write(74);
+  jointRight.write(104);
+  jointLeft.write(119);
+  delay(intervalo);
+
+}
+
+void teclaZero(){
+
+  jointBase.write(93);
+  jointRight.write(93);
+  jointLeft.write(115);
+  delay(intervalo);
+
+  jointBase.write(93);
+  jointRight.write(93);
+  jointLeft.write(90);
+  delay(intervalo);
+
+  jointBase.write(93);
+  jointRight.write(93);
+  jointLeft.write(115);
+  delay(intervalo);
+
+}
+
+void teclaCorrige(){
+
+  jointBase.write(118);
+  jointRight.write(93);
+  jointLeft.write(115);
+  delay(intervalo);
+
+  jointBase.write(118);
+  jointRight.write(93);
+  jointLeft.write(90);
+  delay(intervalo);
+
+  jointBase.write(118);
+  jointRight.write(93);
+  jointLeft.write(115);
+  delay(intervalo);
+
+}
+
+void teclaConfirma(){
+
+  jointBase.write(67);
+  jointRight.write(95);
+  jointLeft.write(115);
+  delay(intervalo);
+
+  jointBase.write(67);
+  jointRight.write(95);
+  jointLeft.write(90);
+  delay(intervalo);
+
+  jointBase.write(67);
+  jointRight.write(95);
+  jointLeft.write(115);
+  delay(intervalo);
+
+}
 
 void posicaoSeguranca(){
 
-  jointBase.write(94);
-  jointRight.write(127);
-  jointLeft.write(118);
+  jointBase.write(91);
+  jointRight.write(93);
+  jointLeft.write(144);
   delay(intervalo);
 }
 
 void home(){
 
-  jointBase.write(94);
-  jointRight.write(86);
-  jointLeft.write(180);
+  jointBase.write(88);
+  jointRight.write(82);
+  jointLeft.write(163);
   delay(intervalo);
 }
