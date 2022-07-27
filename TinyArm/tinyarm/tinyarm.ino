@@ -23,52 +23,101 @@ int jointGradeBase, jointGradeLeft, jointGradeRight, jointGradeGrip;
 unsigned long mostradorTimer = 1;
 const unsigned long intervaloMostrador = 5000;
 
+void home();
+void posicaoSeguranca();
+
 void setup() {
 
   //inicia o monitor serial
   Serial.begin(9600);
 
   // atribui pinos dos servos
-
   jointBase.attach(pinServ1);
   jointRight.attach(pinServ2);
   jointLeft.attach(pinServ3);
+  home();
+  posicaoSeguranca();
+
 }
 
+
 void loop() {
+ 
 
-  // leitura dos potenciometros
-  // jointGradeBase = map(analogRead(pot1), 0, 1023, 180, 0);
-  // jointGradeLeft = map(analogRead(pot3), 0, 1023, 85, 180);
-  // jointGradeRight = map(analogRead(pot2), 0, 1023, 180, 0);
-
-  // seta posicionamento dos servos
-  // jointBase.write(jointGradeBase);
-  // jointRight.write(jointGradeRight);
-  // jointLeft.write(jointGradeLeft);
-
-  
-
-  // tempo de espera para recomeçar
-  // delay(100); sem delay = sem ""tremedeira"
-
-  home();
-  
-  posicaoSeguranca();
-  teclaUm();
-  teclaDois();
-  teclaTres();
-  teclaQuatro();
-  teclaCinco();
-  teclaSeis();
-  teclaSete();
-  teclaOito();
-  teclaNove();
-  teclaZero();
-  teclaCorrige();
-  teclaConfirma();
+  if (Serial.available() > 0) {
+    char incomingString = Serial.read();
+    stateMachine(incomingString);
+  }
+    
   
   
+}
+
+void stateMachine(char incomingString){
+
+  switch (incomingString) {
+    case '0':
+      teclaUm();
+      break;
+    case '1':
+      teclaUm();
+      break;
+    case '2':
+      teclaDois();
+      break;
+    case '3':
+      teclaTres();
+      break;
+    case '4':
+      teclaQuatro();
+      break;
+    case '5':
+      teclaCinco();
+      break;
+    case '6':
+      teclaSeis();
+      break;
+    case '7':
+      teclaSete();
+      break;
+    case '8':
+      teclaOito();
+      break;
+    case '9':
+      teclaNove();
+      break;
+    case 'G':
+      teclaCorrige();
+      break;
+    case 'C':
+      teclaConfirma();
+      break;
+    case 'H':
+      home();
+      break;
+    case 'S':
+      posicaoSeguranca();
+      break;
+    default:
+      break;
+
+  }
+}
+
+void home(){
+
+  jointBase.write(88);
+  jointRight.write(82);
+  jointLeft.write(163);
+  delay(intervalo);
+}
+
+void posicaoSeguranca(){
+
+  jointBase.write(91);
+  jointRight.write(93);
+  jointLeft.write(144);
+  delay(intervalo);
 }
 
 void teclaUm(){
@@ -299,18 +348,4 @@ void teclaConfirma(){
 
 }
 
-void posicaoSeguranca(){
 
-  jointBase.write(91);
-  jointRight.write(93);
-  jointLeft.write(144);
-  delay(intervalo);
-}
-
-void home(){
-
-  jointBase.write(88);
-  jointRight.write(82);
-  jointLeft.write(163);
-  delay(intervalo);
-}
