@@ -7,11 +7,6 @@
 #define pinServ3 6
 
 // define as portas dos potenciometros
-#define pot1 A0
-#define pot2 A1
-#define pot3 A2
-
-
 #define intervalo 500
 
 // nomeia os servos
@@ -19,9 +14,6 @@ Servo jointBase, jointRight, jointLeft, jointGrip;
 
 // cria as variavies dos angulos de cada motor
 int jointGradeBase, jointGradeLeft, jointGradeRight, jointGradeGrip;
-
-unsigned long mostradorTimer = 1;
-const unsigned long intervaloMostrador = 5000;
 
 void home();
 void posicaoSeguranca();
@@ -43,14 +35,11 @@ void setup() {
 
 void loop() {
  
-
   if (Serial.available() > 0) {
     char incomingString = Serial.read();
     stateMachine(incomingString);
   }
     
-  
-  
 }
 
 void stateMachine(char incomingString){

@@ -1,14 +1,13 @@
-import time
-
 import serial
-ser = serial.Serial()  # open serial port
-ser.baudrate = 9600
-ser.port = 'COM5'
-ser.open()
-print(ser.name)
-# ser.open()
-# print(ser.name)         # check which port was really used
-ser.write(b'1234567134567234')
-time.sleep(1000)
-# ser.close()
+
+# while True:
+try:
+    ser = serial.Serial()  # open serial port
+    ser.baudrate = 9600
+    ser.port = 'COM3'
+    ser.open()
+    print("serial opened!")
+    ser.write(b'CGCGCG453534535411SH')
+except:
+    print("error to open serial port!")
 ser.close()             # close port
